@@ -9,7 +9,6 @@ local default_plugins = {
     branch = "v2.0",
     build = function()
       require("base46").load_all_highlights()
-       require("base46").toggle_transparency()
     end,
   },
 
