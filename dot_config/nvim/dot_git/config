@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://github.com/NvChad/NvChad
+	fetch = +refs/heads/v2.0:refs/remotes/origin/v2.0
+[branch "v2.0"]
+	remote = origin
+	merge = refs/heads/v2.0
