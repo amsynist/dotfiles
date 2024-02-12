@@ -1,0 +1,81 @@
+# default layout (can be bsp, stack or float)
+#
+#
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+yabai -m config layout bsp
+
+# new window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+
+# padding set to 12px
+yabai -m config top_padding 35
+yabai -m config bottom_padding 14
+yabai -m config left_padding 15
+yabai -m config right_padding 15
+yabai -m config window_gap 12
+
+# -- mouse settings -
+yabai -m config external_bar all:20:40
+
+# center mouse on window with focus
+yabai -m config mouse_follows_focus          off
+yabai -m config focus_follows_mouse          autofocus
+
+# modifier for clicking and dragging with mouse
+yabai -m config mouse_modifier alt
+# set modifier + left-click drag to move window
+yabai -m config mouse_action1 move
+# set modifier + right-click drag to resize window
+yabai -m config mouse_action2 resize
+
+yabai -m config window_animation_duration 0.60
+
+yabai -m config window_opacity_duration 0.45
+
+# when window is dropped in center of another window, swap them (on edges it will split it)
+yabai -m mouse_drop_action swap
+
+yabai -m config window_topmost              off
+yabai -m config window_opacity              on
+yabai -m config window_shadow               float
+
+function setup_space {
+  local idx="$1"
+  local name="$2"
+  local space=
+  echo "setup space $idx : $name"
+
+  space=$(yabai -m query --spaces --space "$idx")
+  if [ -z "$space" ]; then
+    yabai -m space --create
+  fi
+
+  yabai -m space "$idx" --label "$name"
+}
+yabai -m config active_window_opacity       1.0
+yabai -m config normal_window_opacity       0.80
+yabai -m config split_ratio                 0.50
+
+
+#apps to specific spaces 
+yabai -m rule --add app="^Google Chat$" space=^1
+yabai -m rule --add app="^Microsoft Teams (work or school)$" space=^1
+yabai -m rule --add app="^Visual Studio Code 2$" space=2
+yabai -m rule --add app="^Kitty$" space=2
+yabai -m rule --add app="^SigmaOS$" space=3
+
+setup_space 1 chats
+setup_space 2 code
+setup_space 3 web
+# disable specific apps
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^QuickTime Player$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+# Notify sketchybar when space changes
+yabai -m signal --add event=window_title_changed action="sketchybar --trigger title_change" 
+
