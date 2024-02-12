@@ -205,4 +205,4 @@ git_custom() {
 
 # Set an alias for git_custom
 alias git=git_custom
-
+alias dots="chezmoi"
