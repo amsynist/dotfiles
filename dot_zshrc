@@ -145,7 +145,7 @@ check_terminal_size() {
         execute_if_terminal_size_bigger
     else 
   export STARSHIP_CONFIG=~/.config/starship_base.toml
-eval "$(starship init zsh)"
+  eval "$(starship init zsh)"
     fi
 }
 
