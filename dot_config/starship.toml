@@ -1,0 +1,85 @@
+# ~/.config/starship.toml
+
+right_format = """$cmd_duration$battery$aws"""
+
+add_newline = true 
+format = """
+ [ 󰊠  ](bold italic #FFA500) ⌠ $directory⌡ $git_branch$python$golang$nodejs
+ [    ](bold italic skyblue) 
+ [  ](#00FFFF)$character
+"""
+# ~/.config/starship.toml
+
+[git_branch]
+symbol = ' '
+truncation_length = 8
+truncation_symbol = '..'
+format = 'on ⌠ [$symbol$branch(:$remote_branch) ]($style)⌡  '
+style="bold green"
+
+[golang]
+symbol = '󰟓  '
+format = 'via [$symbol($version )]($style)'
+
+
+#
+# # Replace the "❯"
+[character]
+success_symbol = "[󰋇 ](#00FFFF)"
+error_symbol = "[󰒲 ](red)"
+#
+# # configure directory
+[directory]
+read_only = " "
+format = "[$path]($style)[$lock_symbol]($lock_style) "
+truncation_length = 10
+truncate_to_repo = true # truncates directory to root folder if in github repo
+style = "italic #45b3e0"
+#
+#
+[os]
+format = " ($style)"
+style = "bold blue italic"
+disabled = false
+
+
+#
+[cmd_duration]
+min_time = 4
+show_milliseconds = false
+format = '󰪢 [$duration]($style) '
+disabled = false
+style = "bold italic blue"
+#
+#
+[python]
+symbol = "󱔎 "
+#pyenv_version_name = true
+format = 'via [${symbol}(${version}) ⥋ (\($virtualenv\))]($style) '
+style = "bold  #00C5FF"
+pyenv_prefix = "venv "
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+detect_extensions = ["py"]
+version_format = "v${major}.${minor}"
+#
+#
+# [nodejs] 
+# format = "via [ $version](bold italic green) "
+# detect_files = ["package.json", ".node-version"]
+# detect_folders = ["node_modules"]
+#
+#
+[aws]
+format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+symbol = '󰅟 '
+style = "yellow"
+#
+#
+# [battery]
+# full_symbol = "🔋"
+# charging_symbol = "🔌"
+# discharging_symbol = "⚡"
+#
+[[battery.display]]
+threshold = 30
+style = "bold red"

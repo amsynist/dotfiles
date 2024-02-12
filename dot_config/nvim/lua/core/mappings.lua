@@ -48,9 +48,9 @@ M.general = {
 
     ["<leader>fm"] = {
       function()
-        vim.lsp.buf.format { async = true }
+       require("conform").format({async = true, lsp_fallback = true})      
       end,
-      "LSP formatting",
+      "Format File",
     },
   },
 

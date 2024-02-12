@@ -1,55 +1,41 @@
 
-# Path to your oh-my-zsh installation.
+#==========================================
+#            Zsh Base Inits               #
+#=========================================
 export ZSH="$HOME/.oh-my-zsh"
-
+source $ZSH/oh-my-zsh.sh
 export TERM="xterm-256color"  # proper colors# Set name of the theme to
+export EDITOR='nvim'
+export ZSH_DOTENV_PROMPT=false
+export VIRTUAL_ENV_DISABLE_PROMPT=0
+#THEME 
 ZSH_THEME="robbyrussell"
 
 
-alias ssh="TERM=xterm-256color ssh"
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
+#==========================================
+#                Extras                  #  
+#=========================================
+
+## -> External/Plugins
+init_extras() {
+  echo "$HERE"
 source ~/.cache/wal/colors.sh
 source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source ~/.oh-my-zsh/plugins/aws/aws.plugin.zsh
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-export ZSH_DOTENV_PROMPT=false
-source $ZSH/oh-my-zsh.sh
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste up-line-or-search down-line-or-search expand-or-complete accept-line push-line-or-edit)
-# User configuration
-export VIRTUAL_ENV_DISABLE_PROMPT=0
-# export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+## -> init External Scripts 
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+eval "$(atuin init zsh)"
+eval "$(starship init zsh)"
+}
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias src="source ~/.zshrc"
-alias v="nvim"
-alias home="cd ~"
-export NNN_FIFO=/tmp/nnn.fifo
-alias n="nnn"
+#==========================================
+#              Functions                  #  
+#=========================================
 function nnn () {
     command nnn "$@"
 
@@ -77,35 +63,6 @@ function api() {
     echo "Invalid operation. Use 'get' or 'post'."
   fi
 }
-alias lss="ya"
-alias matrix="unimatrix -c blue -u 'Linux'"
-alias config="v ~/.zshrc"
-alias ls="exa --icons"
-export NNN_PLUG='p:previewimg;i:imgview;z:ipinfo'
-eval "$(starship init zsh)"
-export PYTHONPYCACHEPREFIX="${HOME}/.cache/Python"
-export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
-export LDFLAGS="-L/opt/homebrew/opt/sqlite/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
-export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
-export NNN_TMPFILE="$HOME/.config/nnn/.lastd"
-export EDITOR="$(which nvim)"
-export VISUAL="$(which nvim)"
-export MANPAGER="$(which nvim) +Man!"
-export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-export LIBTOOL="/opt/homebrew/bin/glibtool"
-export LIBTOOLIZE="/opt/homebrew/bin/glibtoolize"
-eval "$(pyenv virtualenv-init -)"
-
-
-eval "$(atuin init zsh)"
-
-export PATH=$PATH:/Users/zero/.spicetify
-
-alias rm='rm_confirm'
 
 rm_confirm() {
     local confirm
@@ -120,7 +77,6 @@ rm_confirm() {
         fi
  
 }
-
 
 # Override git commit with a custom function
 git_custom() {
@@ -139,11 +95,65 @@ git_custom() {
   fi
 }
 
-# Set an alias for git_custom
+#==========================================
+#              Aliases/Exports            #  
+#=========================================
+
+## -> Aliases
+
+alias src="source ~/.zshrc"
+alias v="nvim"
+alias home="cd ~"
+alias n="nnn"
+alias lss="ya"
+alias matrix="unimatrix -c blue -u 'Linux'"
+alias config="v ~/.zshrc"
+alias ls="exa --icons"
+alias rm='rm_confirm'
 alias git=git_custom
 alias dots="chezmoi"
 alias vida="cd $HOME/VIDA/"
 alias work="cd $HOME/WORK/"
 alias zero="cd $HOME/ZERO/"
 
+## -> Exports
 
+export NNN_FIFO=/tmp/nnn.fifo
+export PATH=$PATH:/Users/zero/.spicetify
+export NNN_PLUG='p:previewimg;i:imgview;z:ipinfo'
+export PYTHONPYCACHEPREFIX="${HOME}/.cache/Python"
+export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
+export LDFLAGS="-L/opt/homebrew/opt/sqlite/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+export NNN_TMPFILE="$HOME/.config/nnn/.lastd"
+export EDITOR="$(which nvim)"
+export VISUAL="$(which nvim)"
+export MANPAGER="$(which nvim) +Man!"
+export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$HOME/.pyenv/bin:$PATH"
+export LIBTOOL="/opt/homebrew/bin/glibtool"
+export LIBTOOLIZE="/opt/homebrew/bin/glibtoolize"
+
+
+
+
+# Function to check terminal size
+check_terminal_size() {
+    if [ "$(tput cols)" -gt 20 ] && [ "$(tput lines)" -gt 24 ]; then
+        execute_if_terminal_size_bigger
+    else 
+  export STARSHIP_CONFIG=~/.config/starship_base.toml
+eval "$(starship init zsh)"
+    fi
+}
+
+# Execute aliases and functions only if terminal size is bigger
+execute_if_terminal_size_bigger() {
+    
+    # Export aliases,exports and functions,extras 
+    init_extras
+}
+
+check_terminal_size
