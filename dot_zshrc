@@ -206,3 +206,8 @@ git_custom() {
 # Set an alias for git_custom
 alias git=git_custom
 alias dots="chezmoi"
+alias vida="cd $HOME/VIDA/"
+alias work="cd $HOME/WORK/"
+alias zero="cd $HOME/ZERO/"
+
+
