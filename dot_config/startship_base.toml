@@ -1,0 +1,5 @@
+add_newline = true 
+format = """
+ [ 󰊠  ](bold italic #FFA500) ⌠ $directory⌡ 
+ [  ](#00FFFF)$character
+"""
