@@ -194,6 +194,9 @@ git_custom() {
     sh ~/ZERO/SCRIPTS/git_user.sh 
   elif [[ $1 == "push" ]]; then
     sh ~/ZERO/SCRIPTS/git_user.sh
+        # Call the original git command for other cases
+    command git "$@"
+
   else
     # Call the original git command for other cases
     command git "$@"
