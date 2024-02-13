@@ -7,14 +7,26 @@ M.dap = {
     ["<leader>db"] = {
       function()
         require("dap").toggle_breakpoint()
-      end
+      end,
+      "Toggle BreakPoint"
     },
     ["<leader>dc"] = {
       function()
         require("dap").continue()
-      end
-    }
+      end,
+      "Continue Debug"
 
+    },
+    ["<leader>pp"] = {
+      function()
+        -- show barbecue globally
+        require("barbecue.ui").toggle(true)
+      end,
+      "Barbeque BreadCumbs"
+
+    },
+    ["<leader>pe"] = { "<cmd> EnableHL <CR>", "Indents" },
+    ["<leader>pd"] = { "<cmd> DisableHL <CR>", "Indents" },
   }
 }
 M.dap_python = {
@@ -23,7 +35,8 @@ M.dap_python = {
     ["<leader>dr"] = {
       function()
         require("dap-python").test_method()
-      end
+      end,
+      "Run Test and Debug "
     }
   }
 }
