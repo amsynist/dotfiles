@@ -8,7 +8,7 @@ sketchy_topbar --add item line right \
 	icon.color=0xff9fd06a \
 	label.font="Operator Mono Ssm Lig:Medium Italic:11.0" \
 	label.padding_right=5 \
-	label.color=0xffD0871A \
+	label.color=$COLOR_TWO \
 	script="$PLUGIN_DIR/playing.sh" \
 	label.y_offset=-1 \
 	background.padding_right=3 \

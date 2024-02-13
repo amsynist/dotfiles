@@ -153,7 +153,7 @@ return {
     brightness = 0.6,
   },
 
-  color_scheme = "GruvboxDark",
+  color_scheme = "nord",
   colors = {
     tab_bar = {
       background = TAB_BAR_BG,

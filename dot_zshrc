@@ -30,6 +30,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(atuin init zsh)"
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 }
 
 
@@ -115,6 +116,7 @@ alias dots="chezmoi"
 alias vida="cd $HOME/VIDA/"
 alias work="cd $HOME/WORK/"
 alias zero="cd $HOME/ZERO/"
+alias cd="z"
 
 ## -> Exports
 
@@ -141,7 +143,7 @@ export LIBTOOLIZE="/opt/homebrew/bin/glibtoolize"
 
 # Function to check terminal size
 check_terminal_size() {
-    if [ "$(tput cols)" -gt 20 ] && [ "$(tput lines)" -gt 24 ]; then
+    if [ "$(tput cols)" -gt 20 ] && [ "$(tput lines)" -gt 16 ]; then
         execute_if_terminal_size_bigger
     else 
   export STARSHIP_CONFIG=~/.config/starship_base.toml
