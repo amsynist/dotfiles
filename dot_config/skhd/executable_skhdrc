@@ -68,14 +68,22 @@ shift + alt - p : yabai -m window --space prev;
 shift + alt - n : yabai -m window --space next;
 
 # move window to space #
-rctrl - 1 : yabai -m window --space 1;
-rctrl - 2 : yabai -m window --space 2;
-rctrl - 3 : yabai -m window --space 3;
-rctrl - 4 : yabai -m window --space 4;
-rctrl - 5 : yabai -m window --space 5;
-rctrl - 6 : yabai -m window --space 6;
-rctrl - 7 : yabai -m window --space 7;
+cmd - 1 : yabai -m window --space 1;yabai -m space --focus 1;
+cmd - 2 : yabai -m window --space 2; yabai -m space --focus 2;
+cmd - 3 : yabai -m window --space 3; yabai -m space --focus 3;
+cmd - 4 : yabai -m window --space 4;yabai -m space --focus 4;
+cmd - 5 : yabai -m window --space 5;yabai -m space --focus 5;
+cmd - 6 : yabai -m window --space 6;yabai -m space --focus 6;
+cmd - 7 : yabai -m window --space 7;yabai -m space --focus 7;
 
+# move window to space #
+cmd - 0x53 : yabai -m window --space 1;yabai -m space --focus 1;
+cmd - 0x54 : yabai -m window --space 2;yabai -m space --focus 2;
+cmd - 0x55 : yabai -m window --space 3;yabai -m space --focus 3;
+cmd - 0x56 : yabai -m window --space 4;yabai -m space --focus 4;
+cmd - 0x57 : yabai -m window --space 5;yabai -m space --focus 5;
+cmd - 0x58 : yabai -m window --space 6;yabai -m space --focus 6;
+rctrl - 0x59 : yabai -m window --space 7;yabai -m space --focus 7;
 
 # move window to space #
 lctrl - 1 : yabai -m space --focus 1;
