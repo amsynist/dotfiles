@@ -1,5 +1,22 @@
 local plugins = {
+  -- Lua
 
+  {
+    'olivercederborg/poimandres.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('poimandres').setup {
+        -- leave this setup function empty for default config
+        -- or refer to the configuration section
+        -- for configuration options
+      }
+    end,
+
+    -- optionally set the colorscheme within lazy config
+  },
+  { "fcancelinha/northern.nvim", branch = "master", priority = 1000 },
+  { "antonk52/lake.nvim",        priority = 1000 },
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -51,7 +68,7 @@ local plugins = {
       },
       format_on_save = {
         -- These options will be passed to conform.format()
-        timeout_ms = 500,
+        timeout_ms = 1200,
         lsp_fallback = true,
       },
     },
@@ -165,32 +182,33 @@ local plugins = {
     "shellRaining/hlchunk.nvim",
     event = { "UIEnter" },
     config = function()
-      require("hlchunk").setup({
-        chunk = {
-          enable = true,
-          use_treesitter = true,
-        },
-
-        indent = {
-          enable = true,
-          use_treesitter = false,
-          notify = true,
-        },
-
-        line_num = {
-          enable = true,
-        },
-        blank = {
-          enable = true,
-        },
-        -- context = {
-        --     enable = false,
-        -- },
-      })
+      require("custom.configs.hlchunk")
     end
   }
 
   ,
+  {
+    "hrsh7th/nvim-cmp",
+  },
+  {
+    "hrsh7th/cmp-nvim-lsp",
+  },
+  {
+    "hrsh7th/cmp-buffer",
+  },
+  {
+    "hrsh7th/cmp-path",
+  },
+  {
+    "hrsh7th/cmp-cmdline",
+  }
+  ,
+  {
+    'romgrk/searchbox.nvim',
+    dependencies = {
+      { 'MunifTanjim/nui.nvim' }
+    }
+  },
 }
 
 return plugins

@@ -25,8 +25,14 @@ M.dap = {
       "Barbeque BreadCumbs"
 
     },
-    ["<leader>pe"] = { "<cmd> EnableHL <CR>", "Indents" },
-    ["<leader>pd"] = { "<cmd> DisableHL <CR>", "Indents" },
+    ["<leader>pe"] = { "<cmd> EnableHL <CR>", "Enable Indents" },
+    ["<leader>pd"] = { "<cmd> DisableHL <CR>", "Disable Indents" },
+
+    ["<A-r>"] = { function()
+      require('searchbox').replace({ visual_mode = true })
+    end, "Toggle Replacer" },
+
+
   }
 }
 M.dap_python = {
