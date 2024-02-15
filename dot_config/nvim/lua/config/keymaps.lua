@@ -7,4 +7,4 @@ local Util = require("lazyvim.util")
 -- DO NOT USE THIS IN YOU OWN CONFIG!!
 -- use `vim.keymap.set` instead
 local map = Util.safe_keymap_set
-map({ "n", "i" }, "<C-p>", "<cmd>NnnPicker<cr><esc>", { desc = "File Picker NNN" })
+map({ "n" }, "<C-p>", "<cmd>NnnPicker<cr><esc>", { desc = "File Picker NNN" })
