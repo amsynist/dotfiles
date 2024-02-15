@@ -1,6 +1,29 @@
 local plugins = {
   -- Lua
+  {
+    "echasnovski/mini.animate",
+    priority = 1000,
+    config = function()
+      require("mini.animate").setup({
+        cursor = true,
+        timing = 500,
 
+      })
+    end
+  },
+  {
+    "dnlhc/glance.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "luukvbaal/nnn.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("nnn").setup()
+    end
+  },
   {
     'olivercederborg/poimandres.nvim',
     lazy = false,

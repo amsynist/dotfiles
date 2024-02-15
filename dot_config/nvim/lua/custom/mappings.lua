@@ -17,7 +17,7 @@ M.dap = {
       "Continue Debug"
 
     },
-    ["<leader>pp"] = {
+    ["<leader>pb"] = {
       function()
         -- show barbecue globally
         require("barbecue.ui").toggle(true)
@@ -27,6 +27,7 @@ M.dap = {
     },
     ["<leader>pe"] = { "<cmd> EnableHL <CR>", "Enable Indents" },
     ["<leader>pd"] = { "<cmd> DisableHL <CR>", "Disable Indents" },
+
 
     ["<A-r>"] = { function()
       require('searchbox').replace({ visual_mode = true })

@@ -16,6 +16,13 @@ M.general = {
   },
 
   n = {
+    ["<leader>pe"] = {
+      "<cmd> NnnExplorer <CR>", "File Tree",
+    },
+    ["<leader>pp"] = {
+      "<cmd> NnnPicker <CR>", "File Picker",
+    },
+
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
     -- switch between windows
     ["<C-h>"] = { "<C-w>h", "Window left" },
