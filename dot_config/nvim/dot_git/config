@@ -6,8 +6,8 @@
 	ignorecase = true
 	precomposeunicode = true
 [remote "origin"]
-	url = https://github.com/NvChad/NvChad
-	fetch = +refs/heads/v2.0:refs/remotes/origin/v2.0
-[branch "v2.0"]
+	url = https://github.com/LazyVim/starter
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
 	remote = origin
-	merge = refs/heads/v2.0
+	merge = refs/heads/main
