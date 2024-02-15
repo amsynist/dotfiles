@@ -198,7 +198,7 @@ return {
     { key = "RightArrow", mods = "CTRL",  action = wezterm.action({ ActivatePaneDirection = "Right" }) },
     { key = "DownArrow",  mods = "CTRL",  action = wezterm.action({ ActivatePaneDirection = "Down" }) },
     { key = "UpArrow",    mods = "CTRL",  action = wezterm.action({ ActivatePaneDirection = "Up" }) },
-    { key = "w",          mods = "SUPER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
+    { key = "w",          mods = "SUPER", action = wezterm.action({ CloseCurrentPane = { confirm = false } }) },
     { key = ",",          mods = "SUPER", action = wezterm.action.TogglePaneZoomState },
     {
       key = "[",
