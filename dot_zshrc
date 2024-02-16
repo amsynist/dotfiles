@@ -118,11 +118,13 @@ alias vida="cd $HOME/VIDA/"
 alias work="cd $HOME/WORK/"
 alias zero="cd $HOME/ZERO/"
 alias cd="z"
-
+alias net="gping www.google.com -c '#88C0D0,#B48EAD,#81A1C1,#8FBCBB'"
+alias tree="tre"
+alias branch="sh ~/ZERO/SCRIPTS/git_branch.sh"
 ## -> Exports
 
 export NNN_FIFO=/tmp/nnn.fifo
-export PATH=$PATH:/Users/zero/.spicetify
+export PATH=$PATH:/Users/zero/.spicetify e
 export NNN_PLUG='p:previewimg;i:imgview;z:ipinfo'
 export PYTHONPYCACHEPREFIX="${HOME}/.cache/Python"
 export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
@@ -160,3 +162,5 @@ execute_if_terminal_size_bigger() {
 }
 
 check_terminal_size
+
+
