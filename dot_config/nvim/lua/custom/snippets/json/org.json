@@ -1,9 +1,0 @@
-{
-  "Org Title": {
-    "prefix": "title",
-    "body": [
-      "#+TITLE: ${1:DEMO}"
-    ],
-    "description": "org-mode title"
-  }
-}
