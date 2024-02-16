@@ -78,8 +78,8 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 end)
 
 return {
-  window_background_opacity = 0.7,
-  macos_window_background_blur = 40,
+  window_background_opacity = 0.8,
+  macos_window_background_blur = 50,
   window_padding = {
     left = 30,
     right = 10,
@@ -149,8 +149,8 @@ return {
   leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 },
 
   inactive_pane_hsb = {
-    saturation = 0.6,
-    brightness = 0.6,
+    saturation = 0.8,
+    brightness = 0.7,
   },
 
   color_scheme = "nord",
