@@ -78,7 +78,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 end)
 
 return {
-  window_background_opacity = 0.8,
+  window_background_opacity = 1,
   macos_window_background_blur = 50,
   window_padding = {
     left = 30,
@@ -207,6 +207,6 @@ return {
     },
     { key = "]", mods = "CTRL", action = wezterm.action.RotatePanes("Clockwise") },
   },
-  font_size = 14,
+  font_size = 14.5,
   font = wezterm.font("ZeroCode"),
 }
