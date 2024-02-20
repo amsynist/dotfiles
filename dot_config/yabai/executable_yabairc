@@ -55,7 +55,7 @@ function setup_space {
   yabai -m space "$idx" --label "$name"
 }
 yabai -m config active_window_opacity       1.0
-yabai -m config normal_window_opacity       1.0
+yabai -m config normal_window_opacity       9.0
 yabai -m config split_ratio                 0.50
 
 

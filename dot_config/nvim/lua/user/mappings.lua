@@ -17,6 +17,11 @@ return {
     --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
     --   desc = "Previous buffer",
     -- },
+    --
+    ["<A-i>"] = {
+      "<cmd>ToggleTerm<CR>",
+      desc = "Toggle Terminal",
+    },
     ["<A-r>"] = {
       "<cmd>SearchBoxReplace<CR>",
       desc = "Search and Replace",
@@ -24,9 +29,9 @@ return {
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(
-          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
-        )
+        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
+          require("astronvim.utils.buffer").close(bufnr)
+        end)
       end,
       desc = "Pick to close",
     },
