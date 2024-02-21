@@ -277,7 +277,7 @@ return {
 				end,
 				hl = function()
 					local position =
-						math.floor(vim.api.nvim_win_get_cursor(0)[1] / vim.api.nvim_buf_line_count(0) * 100)
+							math.floor(vim.api.nvim_win_get_cursor(0)[1] / vim.api.nvim_buf_line_count(0) * 100)
 					local fg
 					local style
 
@@ -319,31 +319,28 @@ return {
 					right_sep = "",
 
 					hl = {
-						bg = "#EBA06B",
-						fg = "#000000",
+						fg = "#50C878",
 						style = "bold",
 					},
 				},
 				change = {
 					provider = "git_diff_changed",
-					icon = " ⟳ ",
-					left_sep = "",
+					icon = " ⟳",
+					left_sep = "",
 					right_sep = "",
 
 					hl = {
-						bg = "#EBA06B",
-						fg = "#000000",
+						fg = "#FFC300",
 						style = "bold",
 					},
 				},
 				remove = {
 					provider = "git_diff_removed",
 					left_sep = "",
-					right_sep = "",
+					right_sep = "",
 
 					hl = {
-						bg = "#EBA06B",
-						fg = "#000000",
+						fg = "#FF5733",
 						style = "bold",
 					},
 				},
@@ -365,9 +362,9 @@ return {
 							git.remove,
 
 							component.separator,
-						}, -- left
+						},                 -- left
 						{ component.file_info }, -- middle
-						{ -- right
+						{                  -- right
 							component.file_type,
 							component.separator,
 
