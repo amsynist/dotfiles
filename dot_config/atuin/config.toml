@@ -54,7 +54,7 @@ update_check = true
 
 ## which style to use
 ## possible values: auto, full, compact
-style = "compact"
+#style = "compact"
 
 ## the maximum number of lines the interface should take up
 ## set it to 0 to always go full screen
