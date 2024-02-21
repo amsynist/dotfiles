@@ -59,7 +59,6 @@ update_check = true
 ## the maximum number of lines the interface should take up
 ## set it to 0 to always go full screen
 # inline_height = 0
-filter_mode_shell_up_key_binding = "directory"
 ## Invert the UI - put the search bar at the top , Default to `false`
 # invert = false
 
