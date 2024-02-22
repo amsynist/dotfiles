@@ -2,20 +2,32 @@
 
 right_format = """$cmd_duration$battery$aws"""
 
-add_newline = true 
+add_newline = true
 format = """
- [ 󰊠  ](bold italic #FFA500) ⌠ $directory⌡ $git_branch$python$golang$nodejs
- [    ](bold italic skyblue) 
- [  ](#00FFFF)$character
+ [ 󰊠  ](bold italic #FFA500) \ 
+ [](bg:#769ff0 fg:#769ff0)$directory\
+ [](bold italic skyblue)$git_branch$python$golang$nodejs 
+ [\n  ](#00FFFF)$character
 """
 # ~/.config/starship.toml
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = "  "
+
+"Desktop" = "  "
+"~" = " "
+"nvim" = ""
+".config" = "󰴳 "
+
 
 [git_branch]
 symbol = ' '
 truncation_length = 8
 truncation_symbol = '..'
 format = 'on ⌠ [$symbol$branch(:$remote_branch) ]($style)⌡  '
-style="bold green"
+style = "bold green"
 
 [golang]
 symbol = '󰟓  '
@@ -31,11 +43,10 @@ error_symbol = "[󰒲 ](red)"
 # # configure directory
 [directory]
 read_only = " "
-format = "[$path]($style)[$lock_symbol]($lock_style) "
+format = "[ ](#2687A2)[$path]($style)[$lock_symbol]($lock_style )[ ](bold #2687A2) "
 truncation_length = 10
-truncate_to_repo = true # truncates directory to root folder if in github repo
-style = "italic #45b3e0"
-#
+truncate_to_repo = true                                                                # truncates directory to root folder if in github repo
+style = "italic fg:#e3e5e5 bg:#2687A2"
 #
 [os]
 format = " ($style)"

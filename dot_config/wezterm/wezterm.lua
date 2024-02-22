@@ -149,12 +149,15 @@ return {
 	leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 },
 
 	inactive_pane_hsb = {
-		saturation = 0.8,
-		brightness = 0.7,
+		saturation = 0.9,
+		brightness = 0.8,
 	},
 
 	color_scheme = "Night Owl (Gogh)",
 	colors = {
+		colors = {
+			split = "#444444",
+		},
 		tab_bar = {
 			background = TAB_BAR_BG,
 		},
