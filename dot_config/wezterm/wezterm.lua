@@ -190,6 +190,11 @@ return {
 
 	keys = {
 		{
+			key = "C",
+			mods = "SUPER",
+			action = wezterm.action.CopyTo("ClipboardAndPrimarySelection"),
+		},
+		{
 			key = "'",
 			mods = "SUPER",
 			action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }),
