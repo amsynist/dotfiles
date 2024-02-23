@@ -12,7 +12,7 @@ yabai -m config window_placement second_child
 # padding set to 12px
 yabai -m config top_padding 30
 yabai -m config bottom_padding 14
-yabai -m config left_padding 70
+yabai -m config left_padding 72
 yabai -m config right_padding 15
 yabai -m config window_gap 12
 
