@@ -1,0 +1,63 @@
+#!/bin/bash
+source "$UTILS"
+#          ╭──────────────────────────────────────────────────────────╮
+#          │                           LEFT BAR                       │
+#          ╰──────────────────────────────────────────────────────────╯
+$LEFT_BAR --add event window_change
+bar=(
+	height=60
+	blur_radius=30
+	position=left
+	height=60
+	sticky=on
+	topmost=on
+	shadow=on
+	y_offset=10
+	margin=10
+	padding_left=16
+	padding_right=16
+	color="$BG_COLOR"
+	font_smoothing=on
+	shadow=on
+	margin=5
+	border_width=2
+	corner_radius=10
+	font_smoothing=on
+	border_color="$CORE_COLOR"
+)
+$LEFT_BAR --bar "${bar[@]}"
+
+#          ╭──────────────────────────────────────────────────────────╮
+#          │                     LEFT BAR DEFAULTS                    │
+#          ╰──────────────────────────────────────────────────────────╯
+defaults=(
+	icon.font="ZeroCode:Regular:16"
+	icon.font.style="Regular"
+	icon.font.size=12
+	icon.color="$ICON_COLOR"
+	label.font="Source Code Pro"
+	label.font.style="Regular"
+	label.font.size=13
+	label.color="$LABEL_COLOR"
+	padding_left=10
+	padding_right=10
+	icon.padding_right=4
+	icon.highlight_color="$HIGHLIGHT_COLOR"
+
+)
+
+$LEFT_BAR --default "${defaults[@]}"
+
+source ../../blocks/general
+line_separator "right" 1 1 "$LEFT_BAR"
+source ../../blocks/music
+
+# source ../../blocks/spaces
+
+source ../../blocks/essentials
+line_separator "left" 1 1 "$LEFT_BAR"
+source ../../blocks/daily
+line_separator "left" 1 1 "$LEFT_BAR"
+source ../../blocks/folders
+line_separator "left" 1 1 "$LEFT_BAR"
+source ../../blocks/dock

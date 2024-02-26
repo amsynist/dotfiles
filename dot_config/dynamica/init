@@ -1,0 +1,18 @@
+#!/bin/bash
+source constants
+source colors
+source icons
+source scripts/script_paths
+
+run_in_bg="$1"
+# Check if the process named "left_bar" is running
+if ! pgrep -x "left_bar" >/dev/null; then
+	echo "Process 'left_bar' not found. Running the script..."
+	if [ "$run_in_bg" -eq "1" ]; then
+		nohup $LEFT_BAR --config ~/.config/dynamica/bars/left_bar/sketchybarrc >>/dev/null 2>&1 &
+	else
+		$LEFT_BAR --config ~/.config/dynamica/bars/left_bar/sketchybarrc
+	fi
+else
+	echo "Process 'left_bar' is already running. Script not executed."
+fi

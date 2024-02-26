@@ -1,0 +1,8 @@
+#!/bin/bash
+export LEFT_BAR="left_bar"
+export RIGHT_BAR="right_bar"
+export BOTTOM_BAR="bottom_bar"
+export TOP_BAR="top_bar"
+export HASKLIG_FONT="Hasklig:Regular:12"
+export FONT_AWESOME="Font Awesome 6 Free:Solid:12.4"
+export FIRA_CODE_FONT="FiraCode Nerd Font:Regular:12"

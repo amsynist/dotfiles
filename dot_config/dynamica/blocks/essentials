@@ -1,0 +1,51 @@
+#!/bin/bash
+
+#          ╭──────────────────────────────────────────────────────────╮
+#          │           ESSENTIALS CONTAINER BLOCK                     │
+#          ╰──────────────────────────────────────────────────────────╯
+
+# ── DEFAULTS ──────────────────────────────────────────────────────────
+BLOCK_POSITION="left"
+
+common=(
+	label.color="$LABEL_COLOR"
+	icon.drawing=off
+	icon.color="$ICON_COLOR"
+	label.font="$FIRA_CODE_FONT"
+	padding_left=18
+	padding_right=18
+
+)
+
+# ── TIME SETTINGS ───────────────────────────────────────────────────
+time=(
+	script="$TIME_SCRIPT"
+	label="$(date '+%H:%M')"
+	update_freq=55
+
+)
+
+# ── DATE SETTINGS ───────────────────────────────────────────────────
+date=(
+	update_freq=120
+	padding_left=6
+	label.font="$FIRA_CODE_FONT"
+	label.color="$LABEL_COLOR"
+	label.padding_left=-4
+
+)
+
+# ── $LEFT_BAR CONFIGURATION ─────────────────────────────────────────
+
+$LEFT_BAR \
+	--add item timer "$BLOCK_POSITION" \
+	--set timer "${time[@]}" "${common[@]}"
+line_separator "$BLOCK_POSITION" 7 7 "$LEFT_BAR"
+
+$LEFT_BAR \
+	--add item day "$BLOCK_POSITION" \
+	--set day label="$(date '+%a')" "${date[@]}" \
+	--add item date "$BLOCK_POSITION" \
+	--set date label="$(date '+%d' | sed s/^0//)" "${date[@]}" \
+	--add item month "$BLOCK_POSITION" \
+	--set month label="$(date '+%b')" "${date[@]}"

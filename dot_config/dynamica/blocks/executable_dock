@@ -1,0 +1,49 @@
+#!/bin/bash
+
+#          ╭──────────────────────────────────────────────────────────╮
+#          │                     DOCK CONTAINER  BLOCK                │
+#          ╰──────────────────────────────────────────────────────────╯
+
+# ── DOCK DEFAULTS ────────────────────────────────────────────────────
+ICON_FONT="ZeroCode:Regular:20"
+
+# Function to generate app configuration
+add_dock_item() {
+	local icon="$1"
+	local appname="$2"
+	local icon_color="${3:-$ICON_COLOR}"
+	local app_config=(
+		icon="$icon"
+		icon.font="$ICON_FONT"
+		icon.color="$icon_color"
+		click_script="open -a '$appname'"
+		icon.padding_left=5
+		padding_left=15
+		padding_right=15
+		background.height=38
+	)
+	$LEFT_BAR --add item "$appname" left --set "$appname" "${app_config[@]}"
+}
+
+# ──  Add items to dock ──────────────────────────────────────────────────────
+
+add_dock_item "$ICON_WEB" "arc"
+add_dock_item "$ICON_TERM" "wezterm"
+add_dock_item "$ICON_TEAMS" "microsoft teams (work or school)"
+add_dock_item "$ICON_HEADSET" "spotify" "$GREEN_COLOR"
+add_dock_item "$ICON_VSCODE" "visual studio code"
+add_dock_item "$ICON_FINDER" "finder"
+add_dock_item "$ICON_COG" "system settings"
+#
+
+app_config=(
+	icon="$ICON_MORE"
+	icon.font="$ICON_FONT"
+	icon.color="$CORE_COLOR"
+	click_script="osascript -e 'tell application \"System Events\" to key code 131'"
+	icon.padding_left=5
+	padding_left=20
+	padding_right=20
+	background.height=38
+)
+$LEFT_BAR --add item more left --set more "${app_config[@]}"

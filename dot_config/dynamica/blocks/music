@@ -1,0 +1,51 @@
+#!/bin/bash
+
+#          ╭──────────────────────────────────────────────────────────╮
+#          │                MUSIC CONTAINER BLOCK                     │
+#          ╰──────────────────────────────────────────────────────────╯
+
+# ── DEFAULTS ──────────────────────────────────────────────────────────
+BLOCK_POSITION="right"
+
+common=(
+	label.color="$DULL_LABEL_COLOR"
+	icon.padding_left=5
+	icon.color="$GREEN_COLOR"
+	icon.font="ZeroCode:Regular:20"
+	label.font="ZeroCode:Italic:9.2"
+	label.padding_left=10
+	icon.padding_left=20
+	label.padding_right=10
+	padding_left=15
+	padding_right=15
+	scroll_texts=on
+	label.max_chars=8
+
+)
+
+# ── MUSIC SETTINGS ───────────────────────────────────────────────────
+music=(
+	icon=
+
+	script="$HYDRATE_SCRIPT"
+	update_freq=1000
+
+)
+
+# ── BATTERY SETTINGS ──────────────────────────────────────────────────
+playing=(
+	script="$PLAYING_SCRIPT"
+	icon.drawing=off
+	update_freq=5
+	label="..."
+)
+
+# ── $LEFT_BAR CONFIGURATION ─────────────────────────────────────────
+
+$LEFT_BAR \
+	--add item playing "$BLOCK_POSITION" \
+	--set playing "${playing[@]}" "${common[@]}"
+
+$LEFT_BAR \
+	--add item music "$BLOCK_POSITION" \
+	--set music "${music[@]}" "${common[@]}"

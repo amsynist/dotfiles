@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Get the directory containing the script
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+export_script() {
+	local script_var_name="$1"
+	local script_file_name="$2"
+
+	# Export the variable with the script path
+	export "$script_var_name"="$script_dir/$script_file_name"
+}
+
+export_script "UTILS" "utils"
+export_script "BATTERY_SCRIPT" "battery.sh"
+export_script "WIFI_SCRIPT" "wifi.sh"
+export_script "VOLUME_SCRIPT" "volume.sh"
+export_script "TIME_SCRIPT" "time.sh"
+export_script "CURRENT_SPACE_SCRIPT" "current_space.sh"
+export_script "PLAYING_SCRIPT" "playing.sh"
+export_script "PLAYING_STATE_SCRIPT" "playing_state.sh"
+export_script "HYDRATE_SCRIPT" "hydrate.sh"

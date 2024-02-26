@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#          ╭──────────────────────────────────────────────────────────╮
+#          │                   SPACES CONTAINER  BLOCK                │
+#          ╰──────────────────────────────────────────────────────────╯
+
+# ── DOCK DEFAULTS ────────────────────────────────────────────────────
+ICON_FONT="$HASKLIG_FONT"
+
+# Function to generate app configuration
+add_space_item() {
+	local icon="$1"
+	local appname="$2"
+	local script="$3"
+	local app_config=(
+		icon="$icon"
+		icon.font="$ICON_FONT"
+		icon.color="$LABEL_COLOR"
+		click_script="$script"
+		icon.padding_left=5
+		padding_left=15
+		padding_right=15
+		background.corner_radius=20
+		background.height=32
+	)
+	$LEFT_BAR --add item "$appname" right --set "$appname" "${app_config[@]}"
+}
+
+# ──  Add items to dock ──────────────────────────────────────────────────────
+
+add_space_item "VI" "space_6" "yabai -m space --focus 6"
+add_space_item "V" "space_5" "yabai -m space --focus 5"
+add_space_item "IV" "space_4" "yabai -m space --focus 4"
+add_space_item "III" "space_3" "yabai -m space --focus 3"
+add_space_item "II" "space_2" "yabai -m space --focus 2"
+add_space_item "I" "space_1" "yabai -m space --focus 1"

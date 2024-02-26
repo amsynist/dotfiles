@@ -1,0 +1,14 @@
+#!/bin/bash
+
+line_separator() {
+	sepName="line-sep-$RANDOM"
+	$LEFT_BAR \
+		--add item "$sepName" "$1" \
+		--set "$sepName" \
+		label="───" \
+		padding_left="$2" \
+		padding_right="$3" \
+		icon.drawing=off \
+		label.font="ZeroCode:Regular:18.1" \
+		label.color="$LABEL_COLOR"
+}
