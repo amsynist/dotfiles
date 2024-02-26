@@ -23,9 +23,17 @@ return {
 		["<leader>zl"] = { "<Cmd>CBline<CR>", desc = "Simple Line" },
 		["<leader>zm"] = { "<Cmd>CBllbox14<CR>", desc = "Marked" },
 		["<A-i>"] = {
+
 			"<cmd>ToggleTerm<CR>",
 			desc = "Toggle Terminal",
 		},
+		["<C-l>"] = {
+			function()
+				require("runner").run()
+			end,
+			desc = "Run ",
+		},
+
 		["<A-r>"] = {
 			"<cmd>SearchBoxReplace<CR>",
 			desc = "Search and Replace",
