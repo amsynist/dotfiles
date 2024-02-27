@@ -36,9 +36,9 @@ if (processList contains "Spotify") is true then
 
 	FINAL="$(echo $PLAYING | sed 's/\(.\{20\}\).*/\1.../')"
 
-	$LEFT_BAR --set $NAME icon="󰎇 " label="$FINAL" label.color="0xe0ffffff"
+	$LEFT_BAR --set playing icon="󰎇 " label="$FINAL" label.color="0xe0ffffff"
 else
-	$LEFT_BAR --set "$NAME" icon.color="$DULL_LABEL_COLOR"
+	$LEFT_BAR --set playing icon.color="$DULL_LABEL_COLOR"
 	$LEFT_BAR --set "playing" label="Focus !"
 
 fi

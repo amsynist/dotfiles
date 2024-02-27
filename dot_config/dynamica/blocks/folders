@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 #!/bin/bash
 
 #          ╭──────────────────────────────────────────────────────────╮
@@ -12,30 +11,26 @@ ICON_FONT="Font Awesome 6 Free:Solid:15"
 
 # Function to generate app configuration
 add_daily_item() {
-    local icon="$1"
-    local name="$2"
-    local script="$3"
-    local icon_color="${4:-$ICON_COLOR}"
+	local icon="$1"
+	local name="$2"
+	local script="$3"
+	local icon_color="${4:-$ICON_COLOR}"
 
-    local app_config=(
-        icon.font.size=22
-        icon="$icon"
-        icon.font="$ICON_FONT"
-        icon.color="$icon_color"
-        click_script="$script"
-        icon.padding_left=5
-        background.height=38
-        padding_left=13
-        padding_right=13
-    )
-    $LEFT_BAR --add item "$name" left --set "$name" "${app_config[@]}"
+	local app_config=(
+		icon.font.size=22
+		icon="$icon"
+		icon.font="$ICON_FONT"
+		icon.color="$icon_color"
+		click_script="$script"
+		icon.padding_left=5
+		background.height=38
+		padding_left=13
+		padding_right=13
+	)
+	$LEFT_BAR --add item "$name" left --set "$name" "${app_config[@]}"
 }
-
 
 # ──  Add items to dock ──────────────────────────────────────────────────────
 add_daily_item "$ICON_MINE" "mine" "wezterm cli spawn --new-window --cwd '$HOME/ZERO/'" "0xe05FB0FC"
 add_daily_item "$ICON_WORK" "work" "wezterm cli spawn --new-window --cwd '$HOME/WORK/'" "0xe05FB0FC"
 add_daily_item "$ICON_VIDA" "vida" "wezterm cli spawn --new-window --cwd '$HOME/VIDA/'" "0xe05FB0FC"
-
-
-

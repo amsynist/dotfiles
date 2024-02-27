@@ -34,16 +34,3 @@ add_dock_item "$ICON_HEADSET" "spotify" "$GREEN_COLOR"
 add_dock_item "$ICON_VSCODE" "visual studio code"
 add_dock_item "$ICON_FINDER" "finder"
 add_dock_item "$ICON_COG" "system settings"
-#
-
-app_config=(
-	icon="$ICON_MORE"
-	icon.font="$ICON_FONT"
-	icon.color="$CORE_COLOR"
-	click_script="osascript -e 'tell application \"System Events\" to key code 131'"
-	icon.padding_left=5
-	padding_left=20
-	padding_right=20
-	background.height=38
-)
-$LEFT_BAR --add item more left --set more "${app_config[@]}"

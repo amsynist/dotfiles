@@ -325,7 +325,7 @@ return {
 				},
 				change = {
 					provider = "git_diff_changed",
-					icon = " ⟳",
+					icon = " ⟳ ",
 					left_sep = "",
 					right_sep = "",
 

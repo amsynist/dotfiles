@@ -32,5 +32,5 @@ add_daily_item() {
 
 # ──  Add items to dock ──────────────────────────────────────────────────────
 add_daily_item "$ICON_DOTS" "my_dots" "wezterm cli spawn --new-window --cwd '$HOME/.local/share/chezmoi'" "$HIGHLIGHT_COLOR"
-add_daily_item "$ICON_CODE" "instant_code" "wezterm start -- nvim ~/ZERO/TRYOUTS" "$HIGHLIGHT_COLOR_THREE"
+add_daily_item "$ICON_CODE" "instant_code" "wezterm cli spawn --new-window --cwd' $HOME/ZERO/TRYOUTS'" "$HIGHLIGHT_COLOR_THREE"
 add_daily_item "$ICON_DOWNLOADS" "downloads" "cd '$HOME/Downloads' && open ." "$HIGHLIGHT_COLOR_TWO"

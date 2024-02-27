@@ -41,7 +41,7 @@ shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 #toggle sticky terminal 
 
-alt - p : yabai -m window --toggle sticky --grid 12:30:20:10:10:10 
+alt - p : yabai -m window --toggle sticky --grid 20:20:15:12:10:10 
 
 
 # -- Modifying Window Size --

@@ -26,12 +26,23 @@ common=(
 # ── MUSIC SETTINGS ───────────────────────────────────────────────────
 music=(
 	icon=
-
+	click_script="$PLAYING_STATE_SCRIPT"
 	script="$HYDRATE_SCRIPT"
 	update_freq=1000
 
 )
 
+forward=(
+	icon=
+	click_script="$BACKWARD_SCRIPT"
+
+)
+
+backward=(
+	icon=
+	click_script="$FORWARD_SCRIPT"
+
+)
 # ── BATTERY SETTINGS ──────────────────────────────────────────────────
 playing=(
 	script="$PLAYING_SCRIPT"
@@ -47,5 +58,12 @@ $LEFT_BAR \
 	--set playing "${playing[@]}" "${common[@]}"
 
 $LEFT_BAR \
+	--add item forward "$BLOCK_POSITION" \
+	--set forward "${forward[@]}" "${common[@]}"
+$LEFT_BAR \
 	--add item music "$BLOCK_POSITION" \
 	--set music "${music[@]}" "${common[@]}"
+
+$LEFT_BAR \
+	--add item backward "$BLOCK_POSITION" \
+	--set backward "${backward[@]}" "${common[@]}"
