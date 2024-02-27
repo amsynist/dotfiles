@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 #!/bin/bash
 
@@ -30,7 +30,10 @@ add_daily_item() {
 	$LEFT_BAR --add item "$name" left --set "$name" "${app_config[@]}"
 }
 
+
+
+
 # ──  Add items to dock ──────────────────────────────────────────────────────
-add_daily_item "$ICON_MINE" "mine" "wezterm cli spawn --new-window --cwd '$HOME/ZERO/'" "0xe05FB0FC"
-add_daily_item "$ICON_WORK" "work" "wezterm cli spawn --new-window --cwd '$HOME/WORK/'" "0xe05FB0FC"
-add_daily_item "$ICON_VIDA" "vida" "wezterm cli spawn --new-window --cwd '$HOME/VIDA/'" "0xe05FB0FC"
+add_daily_item "$ICON_MINE" "mine" "cd '$HOME/ZERO/' && open ." "0xe05FB0FC"
+add_daily_item "$ICON_WORK" "work" "cd '$HOME/WORK/' && open ." "0xe05FB0FC"
+add_daily_item "$ICON_VIDA" "vida" "cd '$HOME/VIDA/' && open ." "0xe05FB0FC"
