@@ -20,37 +20,39 @@ common=(
 volume=(
 	script="$VOLUME_SCRIPT"
 	icon=
-	update_freq=120
+	update_freq=50
 
 )
 
 # ── BATTERY SETTINGS ──────────────────────────────────────────────────
 battery=(
 	script="$BATTERY_SCRIPT"
-	update_freq=120
+	update_freq=50
 	icon=
 	click_script="$BATTERY_SCRIPT"
 )
-
+OPEN_WIFI_PREFERENCE='open x-apple.systempreferences:com.apple.preference.network?Wi-Fi'
 # ── WIFI SETTINGS ──────────────────────────────────────────────────────
+
 wifi=(
 	script="$WIFI_SCRIPT"
 	icon=􀙇
-	update_freq=120
+	click_script="$OPEN_WIFI_PREFERENCE"
+	update_freq=50
 )
 
 # ── $LEFT_BAR CONFIGURATION ─────────────────────────────────────────
 $LEFT_BAR \
 	--add item wifi "$BLOCK_POSITION" \
-	--subscribe wifi wifi_change \
-	--set wifi "${wifi[@]}" "${common[@]}"
+	--set wifi "${wifi[@]}" "${common[@]}" \
+	--subscribe wifi wifi_change
 
 $LEFT_BAR \
 	--add item battery "$BLOCK_POSITION" \
-	--subscribe battery system_woke power_source_change \
-	--set battery "${battery[@]}" "${common[@]}"
+	--set battery "${battery[@]}" "${common[@]}" \
+	--subscribe battery system_woke power_source_change
 
 $LEFT_BAR \
 	--add item volume_icon "$BLOCK_POSITION" \
-	--subscribe volume_icon volume_change \
-	--set volume_icon "${volume[@]}" "${common[@]}" padding_left=22
+	--set volume_icon "${volume[@]}" "${common[@]}" padding_left=22 \
+	--subscribe volume_icon volume_change

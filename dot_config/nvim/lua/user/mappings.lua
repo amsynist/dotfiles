@@ -18,6 +18,11 @@ return {
 		--   desc = "Previous buffer",
 		-- },
 		--
+		["<leader>zr"] = { "<Cmd>ExecutorRun<CR>", desc = "Run Executor" },
+		["<leader>zs"] = { "<Cmd>ExecutorSetCommand<CR>", desc = "Set Executor Command" },
+		["<leader>zh"] = { "<Cmd>ExecutorShowHistory<CR>", desc = "Set Executor History" },
+
+		["<leader>zd"] = { "<Cmd>ExecutorToggleDetail<CR>", desc = "Toggle Executor Details" },
 		["<leader>zb"] = { "<Cmd>CBccbox<CR>", desc = "Box Title" },
 		["<leader>zt"] = { "<Cmd>CBllline<CR>", desc = "Tilted Line" },
 		["<leader>zl"] = { "<Cmd>CBline<CR>", desc = "Simple Line" },

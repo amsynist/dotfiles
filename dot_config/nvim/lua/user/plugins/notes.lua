@@ -12,7 +12,7 @@ return {
 				config = {
 					engine = "nvim-cmp",
 				},
-			}, -- Enables support for completion plugins
+			},                  -- Enables support for completion plugins
 			["core.journal"] = {}, -- Enables support for the journal module
 			["core.dirman"] = { -- Manages Neorg workspaces
 				config = {
@@ -22,14 +22,5 @@ return {
 				},
 			},
 		},
-	},
-	{
-		"edluffy/hologram.nvim",
-		lazy = false,
-		config = function()
-			require("hologram").setup({
-				auto_display = true, -- WIP automatic markdown image display, may be prone to breaking
-			})
-		end,
 	},
 }
