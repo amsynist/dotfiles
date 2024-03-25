@@ -125,6 +125,7 @@ alias net="gping www.google.com -c '#88C0D0,#B48EAD,#81A1C1,#8FBCBB'"
 alias tree="tre"
 alias gb="sh ~/ZERO/SCRIPTS/git_branch.sh"
 alias gc="git commit"
+alias mysql="/usr/local/mysql/bin/mysql"
 ## -> Exports
 
 export NNN_FIFO=/tmp/nnn.fifo
