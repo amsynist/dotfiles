@@ -78,7 +78,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 end)
 
 return {
-	window_background_opacity = 0.8,
+	window_background_opacity = 0.6,
 	macos_window_background_blur = 40,
 	window_padding = {
 		left = 30,
@@ -204,16 +204,16 @@ return {
 			mods = "SUPER",
 			action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
 		},
-		{ key = "LeftArrow",  mods = "SUPER", action = wezterm.action.AdjustPaneSize({ "Left", 4 }) },
-		{ key = "DownArrow",  mods = "SUPER", action = wezterm.action.AdjustPaneSize({ "Down", 2 }) },
-		{ key = "UpArrow",    mods = "SUPER", action = wezterm.action.AdjustPaneSize({ "Up", 2 }) },
+		{ key = "LeftArrow", mods = "SUPER", action = wezterm.action.AdjustPaneSize({ "Left", 4 }) },
+		{ key = "DownArrow", mods = "SUPER", action = wezterm.action.AdjustPaneSize({ "Down", 2 }) },
+		{ key = "UpArrow", mods = "SUPER", action = wezterm.action.AdjustPaneSize({ "Up", 2 }) },
 		{ key = "RightArrow", mods = "SUPER", action = wezterm.action.AdjustPaneSize({ "Right", 4 }) },
-		{ key = "LeftArrow",  mods = "CTRL",  action = wezterm.action({ ActivatePaneDirection = "Left" }) },
-		{ key = "RightArrow", mods = "CTRL",  action = wezterm.action({ ActivatePaneDirection = "Right" }) },
-		{ key = "DownArrow",  mods = "CTRL",  action = wezterm.action({ ActivatePaneDirection = "Down" }) },
-		{ key = "UpArrow",    mods = "CTRL",  action = wezterm.action({ ActivatePaneDirection = "Up" }) },
-		{ key = "w",          mods = "SUPER", action = wezterm.action({ CloseCurrentPane = { confirm = false } }) },
-		{ key = ",",          mods = "SUPER", action = wezterm.action.TogglePaneZoomState },
+		{ key = "LeftArrow", mods = "CTRL", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
+		{ key = "RightArrow", mods = "CTRL", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
+		{ key = "DownArrow", mods = "CTRL", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
+		{ key = "UpArrow", mods = "CTRL", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
+		{ key = "w", mods = "SUPER", action = wezterm.action({ CloseCurrentPane = { confirm = false } }) },
+		{ key = ",", mods = "SUPER", action = wezterm.action.TogglePaneZoomState },
 		{
 			key = "[",
 			mods = "CTRL",

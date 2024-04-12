@@ -34,6 +34,6 @@ add_daily_item() {
 
 
 # ──  Add items to dock ──────────────────────────────────────────────────────
-add_daily_item "$ICON_MINE" "mine" "cd '$HOME/ZERO/' && open ." "0xe05FB0FC"
-add_daily_item "$ICON_WORK" "work" "cd '$HOME/WORK/' && open ." "0xe05FB0FC"
-add_daily_item "$ICON_VIDA" "vida" "cd '$HOME/VIDA/' && open ." "0xe05FB0FC"
+add_daily_item "$ICON_MINE" "mine" "cd '$HOME/ZERO/' && open ." "$HIGHLIGHT_COLOR"
+add_daily_item "$ICON_WORK" "work" "cd '$HOME/WORK/' && open ." "$HIGHLIGHT_COLOR_ONE"
+add_daily_item "$ICON_VIDA" "vida" "cd '$HOME/VIDA/' && open ." "$HIGHLIGHT_COLOR_THREE"

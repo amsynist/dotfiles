@@ -70,7 +70,9 @@ setup_space 1 chats
 setup_space 2 code
 setup_space 3 web
 # disable specific apps
+ 
 yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^NBIA Data Retriever$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
