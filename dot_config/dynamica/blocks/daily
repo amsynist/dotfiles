@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 #!/bin/bash
 
@@ -10,17 +10,27 @@
 ICON_FONT="Font Awesome 6 Free:Solid:15"
 
 # Function to generate app configuration
+add_daily_item() {
+	local icon="$1"
+	local name="$2"
+	local script="$3"
+	local icon_color="${4:-$ICON_COLOR}"
 
+	local app_config=(
+		icon.font.size=22
+		icon="$icon"
+		icon.font="$ICON_FONT"
+		icon.color="$icon_color"
+		click_script="$script"
+		icon.padding_left=8
+		padding_left=12
+		padding_right=12
+		background.height=38
+	)
+	$LEFT_BAR --add item "$name" left --set "$name" "${app_config[@]}"
+}
 
-# Get all spaces
-SPACES=($(yabai -m query --spaces index | jq -r '.[].index'))
-
-
-for SID in "${SPACES[@]}"; do
-  $LEFT_BAR --add space space.$SID left   \
-    --set space.$SID "${spaces[@]}"        \
-    script="$PLUGIN_DIR/app_space.sh $SID" \
-    associated_space=$SID                  \
-    icon=$SID                              \
-    --subscribe space.$SID mouse.clicked front_app_switched space_change update_yabai_icon space_windows_change
-done
+# ──  Add items to dock ──────────────────────────────────────────────────────
+add_daily_item "$ICON_DOTS" "my_dots" "wezterm cli spawn --new-window --cwd '$HOME/.local/share/chezmoi'" "$HIGHLIGHT_COLOR"
+add_daily_item "$ICON_CODE" "instant_code" "wezterm start -- nvim ~/ZERO/TRYOUTS" "$HIGHLIGHT_COLOR_THREE"
+add_daily_item "$ICON_DOWNLOADS" "downloads" "cd '$HOME/Downloads' && open ." "$HIGHLIGHT_COLOR_TWO"
