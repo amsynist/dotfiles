@@ -22,7 +22,7 @@ ZSH_THEME="robbyrussell"
 ## -> External/Plugins
 init_extras() {
   echo "$HERE"
-source ~/.cache/wal/colors.sh
+# source ~/.cache/wal/colors.sh
 source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source ~/.oh-my-zsh/plugins/aws/aws.plugin.zsh
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
