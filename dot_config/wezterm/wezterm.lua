@@ -190,6 +190,13 @@ return {
 
 	keys = {
 		{
+			key = "y",
+			mods = "CMD",
+			action = wezterm.action.SpawnCommandInNewWindow({
+				args = { "sunbeam" },
+			}),
+		},
+		{
 			key = "C",
 			mods = "SUPER",
 			action = wezterm.action.CopyTo("ClipboardAndPrimarySelection"),

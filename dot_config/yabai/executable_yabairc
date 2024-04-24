@@ -30,9 +30,9 @@ yabai -m config mouse_action1 move
 # set modifier + right-click drag to resize window
 yabai -m config mouse_action2 resize
 
-yabai -m config window_animation_duration 0.60
+yabai -m config window_animation_duration 0.10
 
-yabai -m config window_opacity_duration 0.45
+yabai -m config window_opacity_duration 0.25
 
 # when window is dropped in center of another window, swap them (on edges it will split it)
 yabai -m mouse_drop_action swap
