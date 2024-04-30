@@ -8,7 +8,7 @@
 BLOCK_POSITION="left"
 
 common=(
-	label.color="0x00ffffff"
+	label.color="0x99ffffff"
 	icon.drawing=off
 	icon.color="$ICON_COLOR"
 	label.font="$FIRA_CODE_FONT"
@@ -30,7 +30,7 @@ date=(
 	update_freq=120
 	padding_left=6
 	label.font="$FIRA_CODE_FONT"
-	label.color="$LABEL_COLOR"
+	label.color="0x99ffffff"
 	label.padding_left=-4
 
 )
