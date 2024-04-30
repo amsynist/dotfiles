@@ -8,7 +8,7 @@
 BLOCK_POSITION="left"
 
 common=(
-	label.color="$LABEL_COLOR"
+	label.color="0x00ffffff"
 	icon.drawing=off
 	icon.color="$ICON_COLOR"
 	label.font="$FIRA_CODE_FONT"
