@@ -1,0 +1,92 @@
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+sketchybar --bar position=top height=50 color=0x00000000 margin=-26
+
+default=(
+  padding_left=13
+  padding_right=0
+  y_offset=-7
+
+  icon.font="JetBrainsMono Nerd Font:Bold:17.0"
+  label.font="JetBrainsMono Nerd Font:Bold:14.0"
+
+  icon.color=0xffebdbb2
+  label.color=0xffebdbb2
+
+  icon.padding_left=16
+  icon.padding_right=0
+  icon.y_offset=1
+
+  label.padding_left=8
+  label.padding_right=16
+  label.y_offset=1
+
+  background.color=0xff282828
+  background.corner_radius=99
+  background.border_color=0xff928374
+  background.border_width=3
+  background.height=34
+)
+sketchybar --default "${default[@]}"
+
+sketchybar --add event window_focus \
+              --add event title_change
+
+sketchybar --add item title center \
+              --set title script="$PLUGIN_DIR/window_title.sh" padding_left=0 label.padding_left=12 label.padding_right=12 icon.drawing=off \
+              --subscribe title window_focus front_app_switched space_change title_change
+
+sketchybar --add item space_indicator left \
+           --set space_indicator \
+                 width=20 \
+                 label.drawing=off \
+                 background.color=0xffb8bb26 \
+                 background.border_width=0 \
+                 background.height=20 \
+                 background.corner_radius=99 \
+
+SPACE_ICONS=("1" "2" "3" "4" "5")
+for i in "${!SPACE_ICONS[@]}"
+do
+    sid="$(($i+1))"
+    space=(
+        space="$sid"
+        icon="${SPACE_ICONS[i]}"
+        icon.color=0xff928374
+        icon.font="JetBrainsMono Nerd Font:Bold:14.0"
+        icon.padding_left=7
+        icon.padding_right=7
+        padding_left=3
+        padding_right=3
+        icon.y_offset=1
+        label.drawing=off
+        background.drawing=off
+        script="$PLUGIN_DIR/space.sh"
+        click_script="yabai -m space --focus $sid"
+    )
+    sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
+done
+
+sketchybar --set space.1 padding_left=7
+sketchybar --set space.5 padding_right=7
+
+sketchybar --add bracket spaces '/space\..*/' \
+           --set spaces \
+                 background.color=0xff282828 \
+                 background.corner_radius=99 \
+                 background.border_color=0xff928374 \
+                 background.border_width=3 \
+                 background.height=34 \
+
+
+sketchybar --add item clock right \
+           --set clock update_freq=2 icon=  script="$PLUGIN_DIR/clock.sh" icon.padding_left=10 padding_right=20 icon.color=0xfffe8019 click_script="open -a Clock" \
+           --add item calendar right \
+           --set calendar update_freq=60 icon=󰃭  script="$PLUGIN_DIR/date.sh" icon.color=0xfffb4934 click_script="open -a Calendar" \
+           --add item weather right \
+           --set weather update_freq=30 script="/Library/Frameworks/Python.framework/Versions/3.12/bin/python3 $PLUGIN_DIR/weather.py" click_script="open -a Weather" \
+		   --subscribe weather system_woke \
+           --add item battery right \
+           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" icon.color=0xffb8bb26 icon.padding_left=14 click_script="open 'x-apple.systempreferences:com.apple.preference.battery'" \
+           --subscribe battery system_woke power_source_change
+
+sketchybar --update
