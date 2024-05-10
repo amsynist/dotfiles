@@ -14,7 +14,7 @@ opacity = 0.9
 option_as_alt = "Both"
 
 [window.dimensions]
-columns = 90
+columns = 60
 lines = 23
 
 [window.padding]
