@@ -1,0 +1,22 @@
+[env]
+EDITOR = "vim"
+
+[font]
+size = 13.0
+
+[shell]
+args = ["-lic", "sunbeam"]
+program = "/bin/bash"
+
+[window]
+decorations = "none"
+opacity = 0.9
+option_as_alt = "Both"
+
+[window.dimensions]
+columns = 90
+lines = 23
+
+[window.padding]
+x = 10
+y = 10

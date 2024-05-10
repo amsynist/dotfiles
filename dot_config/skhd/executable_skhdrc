@@ -16,14 +16,14 @@ alt - l : yabai -m window --focus east
 
 #change focus between external displays (left and right)
 alt - s : yabai -m display --focus west
-alt - g : yabai -m display --focus east
-
 
 
 #app shortcuts 
-alt - a : open -a "Arc"
-alt - t : open -a "WezTerm"
-alt - c : open -a "Visual Studio Code"
+alt - a : open -a "/Applications/Arc.app"
+alt - t : open  "/Applications/WezTerm.app"
+alt - c : open "/Applications/Visual Studio Code.app"
+alt - g : open "/Applications/GoLand.app"
+
 # -- Modifying the Layout --
 
 # rotate layout clockwise
@@ -127,3 +127,6 @@ ctrl + shift - right : yabai -m window --resize right:50:0; \
 ctrl + alt - q : brew services stop yabai
 ctrl + alt - s : brew services start yabai
 ctrl + alt - r : brew services restart yabai
+
+
+cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty

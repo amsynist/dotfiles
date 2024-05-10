@@ -151,7 +151,7 @@ export LIBTOOLIZE="/opt/homebrew/bin/glibtoolize"
 
 # Function to check terminal size
 check_terminal_size() {
-    if [ "$(tput cols)" -gt 10 ] && [ "$(tput lines)" -gt 10 ]; then
+    if [ "$(tput cols)" -gt 6 ] && [ "$(tput lines)" -gt 6 ]; then
         execute_if_terminal_size_bigger
     else 
   export STARSHIP_CONFIG=~/.config/starship_base.toml

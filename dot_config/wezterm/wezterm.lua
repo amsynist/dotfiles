@@ -78,15 +78,15 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 end)
 
 return {
-	window_background_opacity = 0.6,
-	macos_window_background_blur = 40,
+
 	window_padding = {
 		left = 30,
 		right = 10,
 		top = 30,
 		bottom = 20,
 	},
-
+	window_background_opacity = 0.6,
+	macos_window_background_blur = 40,
 	window_decorations = "RESIZE",
 	native_macos_fullscreen_mode = false,
 	hide_mouse_cursor_when_typing = true,
@@ -149,12 +149,13 @@ return {
 	leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 },
 
 	inactive_pane_hsb = {
-		saturation = 0.8,
-		brightness = 0.8,
+		saturation = 0.9,
+		brightness = 0.9,
 	},
 
-	color_scheme = "Night Owl (Gogh)",
+	color_scheme = "Aura (Gogh)",
 	colors = {
+		background = "black",
 		split = "#444444",
 		tab_bar = {
 			background = TAB_BAR_BG,
