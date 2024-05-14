@@ -1,12 +1,21 @@
 [env]
 EDITOR = "vim"
+TERM = "xterm-256color"
 
 [font]
-size = 13.0
+
+normal.family = "MonoLisa"
+bold.family = "MonoLisa"
+italic.family = "ZeroCode"
+bold_italic.family = "MonoLisa"
+
+size = 15.0
+[cursor]
+style = "Beam"
 
 [shell]
-args = ["-lic", "sunbeam"]
-program = "/bin/bash"
+args = ["-lic", "goql"]
+program = "/bin/zsh"
 
 [window]
 decorations = "none"
@@ -14,9 +23,38 @@ opacity = 0.9
 option_as_alt = "Both"
 
 [window.dimensions]
-columns = 60
+columns = 20
 lines = 23
 
 [window.padding]
 x = 10
 y = 10
+
+# Colors (NightFox)
+
+# Default colors
+[colors.primary]
+background = '#192330'
+foreground = '#cdcecf'
+
+# Normal colors
+[colors.normal]
+black = '#393b44'
+red = '#c94f6d'
+green = '#81b29a'
+yellow = '#dbc074'
+blue = '#719cd6'
+magenta = '#9d79d6'
+cyan = '#63cdcf'
+white = '#dfdfe0'
+
+# Bright colors
+[colors.bright]
+magenta = '#38f9d7'
+black = '#575860'
+red = '#d16983'
+green = '#8ebaa4'
+yellow = '#e0c989'
+blue = '#86abdc'
+cyan = '#baa1e2'
+white = '#e4e4e5'

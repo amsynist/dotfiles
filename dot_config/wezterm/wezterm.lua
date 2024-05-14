@@ -229,6 +229,7 @@ return {
 		},
 		{ key = "]", mods = "CTRL", action = wezterm.action.RotatePanes("Clockwise") },
 	},
-	font_size = 14,
-	font = wezterm.font("ZeroCode"),
+	font_size = 17,
+	font = wezterm.font("Dank Mono"),
+	-- font = wezterm.font("Operator Mono Lig"),
 }

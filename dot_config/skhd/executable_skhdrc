@@ -128,5 +128,4 @@ ctrl + alt - q : brew services stop yabai
 ctrl + alt - s : brew services start yabai
 ctrl + alt - r : brew services restart yabai
 
-
-cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+cmd - space : /Applications/Alacritty.app/Contents/MacOS/alacritty
