@@ -7,12 +7,11 @@ end
 
 -- local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
 local SOLID_RIGHT_ARROW = utf8.char(0xe0b0)
-local dimmer = { brightness = 0.1 }
 local Grey = "#0f1419"
 local LightGrey = "#191f26"
 
 local TAB_BAR_BG = "Black"
-local ACTIVE_TAB_BG = "Yellow"
+local ACTIVE_TAB_BG = "#B3E2A7"
 local ACTIVE_TAB_FG = "Black"
 local HOVER_TAB_BG = Grey
 local HOVER_TAB_FG = "White"
@@ -85,7 +84,7 @@ return {
 		top = 30,
 		bottom = 20,
 	},
-	window_background_opacity = 0.6,
+	window_background_opacity = 0.8,
 	macos_window_background_blur = 40,
 	window_decorations = "RESIZE",
 	native_macos_fullscreen_mode = false,
@@ -153,9 +152,9 @@ return {
 		brightness = 0.9,
 	},
 
-	color_scheme = "Aura (Gogh)",
+	color_scheme = "Catppuccin Mocha",
 	colors = {
-		background = "black",
+		-- background = "black",
 		split = "#444444",
 		tab_bar = {
 			background = TAB_BAR_BG,
@@ -230,6 +229,6 @@ return {
 		{ key = "]", mods = "CTRL", action = wezterm.action.RotatePanes("Clockwise") },
 	},
 	font_size = 17,
-	font = wezterm.font("Dank Mono"),
-	-- font = wezterm.font("Operator Mono Lig"),
+	-- font = wezterm.font("Dank Mono"),
+	font = wezterm.font("ZeroCode"),
 }

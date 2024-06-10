@@ -1,3 +1,3 @@
 source "$HOME/.config/colors.sh"
 
-borders active_color="gradient(top_left=0xff84fab0,bottom_right=0xff38f9d7)" inactive_color="gradient(top_right=0x9938f9d7,bottom_left=0x9938f9d7)" width=4.5 hidpi=on 
+borders active_color="gradient(top_left=0xffDDB6F2,bottom_right=0xff96CDFB)" inactive_color="gradient(top_right=0x9992B3F5,bottom_left=0x9992B3F5)" width=4.5 hidpi=on 

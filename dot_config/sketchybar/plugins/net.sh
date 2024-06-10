@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 
-LABEL=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk 'NR==13 {print $2}')
+LABEL=$(networksetup -getairportnetwork en0 | cut -c 24-)
 
 sketchybar --set $NAME label=$LABEL

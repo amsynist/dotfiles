@@ -128,4 +128,5 @@ ctrl + alt - q : brew services stop yabai
 ctrl + alt - s : brew services start yabai
 ctrl + alt - r : brew services restart yabai
 
-cmd - space : /Applications/Alacritty.app/Contents/MacOS/alacritty
+#cmd - space : /Applications/Alacritty.app/Contents/MacOS/alacritty
+cmd - space : ~/.config/skhd/wezk.sh 

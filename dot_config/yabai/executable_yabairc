@@ -16,7 +16,7 @@ yabai -m config left_padding 16
 yabai -m config right_padding 16
 yabai -m config window_gap 12
 
-yabai -m config external_bar all:40:0
+yabai -m config external_bar all:43:0
 
 # center mouse on window with focus
 yabai -m config mouse_follows_focus          off
@@ -75,7 +75,7 @@ yabai -m rule --add app="^NBIA Data Retriever$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
-yabai -m rule --add app="^Alacritty$" manage=off  grid=6:4:1:1:2:4
+#yabai -m rule --add app="^Alacritty$" manage=off  grid=6:4:1:1:2:3
 #yabai -m rule --add app="^Finder$" manage=off
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 # Notify sketchybar when space changes
